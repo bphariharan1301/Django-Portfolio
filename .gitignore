@@ -6,6 +6,7 @@ scss/
 package.json
 package-lock.json
 node_modules/
+link-test.html
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
