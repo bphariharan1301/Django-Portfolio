@@ -4,33 +4,91 @@
 
 {% block content %}
 
-   <header id="header-home">
-       <div class="container">
+   <header id="header-home"> 
+        <div class="container"> 
+           <!-- Navbar -->
            <nav id="main-nav">
-               <!-- <img src="/Portfolio_Website/static/img/logo.png" alt="Logo" id="logo"> -->
-               <!-- <img src="/Portfolio_Website/static/img/self-logo.png" alt="Logo" id="logo"> -->
-               <!-- <img src="/Portfolio_Website/static/img/self-logo-t1.png" alt="Logo" id="logo"> -->
-               <a href="#">
+               <a href="{% url 'home' %}">
                <img src="{% static 'img/self-logo-t1.png' %}" alt="Logo" id="logo">
-               <!-- <h1 id="logo">
-                   hbp
-               </h1> -->
                </a>
                <ul>
-                   <li><a href="index.html" class="current">Home</a></li>
-                   <li><a href="about.html">About</a></li>
-                   <li><a href="work.html">Work</a></li>
-                   <li><a href="Contact.html">Contact</a></li>
+                   <li><a href="{% url 'home' %}" class="current">Home</a></li>
+                   <li><a href="{% url 'about' %}">About</a></li>
+                   <li><a href="{% url 'work' %}">Work</a></li>
+                   <li><a href="{% url 'contact' %}">Contact</a></li>
                </ul>
            </nav>
            <div class="header-content">
                <h1>
                    I Am Hariharan <span class="txt-type" data-wait="1500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
                </h1>
-               <p class="lead">Python(Django)/occasional use of C/C++/PHP. Have a look at my work</p>
-               <a href="work.html" class="btn-light font-medium-weight">My Work</a>
+               <p class="lead">Specialized Python(Django)/occasional use of C/C++/PHP. Have a look at my work</p>
+               <a href="{% url 'work' %}" class="btn-light font-medium-weight">My Work</a>
            </div>
        </div>
    </header>
+
+   <!-- Section A: Specialize -->
+   <section id="home-a" class="text-center py-2">
+       <div class="container">
+           <h2 class="section-title">
+               I Specialize In 
+           </h2>
+           <div class="bottom-line"></div>
+        </div>
+        <p class="lead">
+            Specialized Python(Django)/occasional use of C/C++/PHP/JavaScript/Web Developer
+        </p>
+        <div class="specials">
+            <div>
+                <i class="fas fa-file-alt fa-2x"></i>
+                <h3>
+                    Concepting
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+            </div>
+            <div>
+                <i class="fas fa-desktop fa-2x"></i>
+                <h3>
+                    Web Developer
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+            </div>
+            <div>
+                <i class="fab fa-python fa-2x"></i>
+                <h3>
+                    Python
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+            </div>
+            <div>
+                <i class="fas fa-thumbs-up fa-2x"></i>
+                <h3>
+                    Interaction
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+            </div>
+        </div>
+   </section>
+
+   <!-- Section B: Specialize -->
+   <section id="home-b" class="text-center py-2">
+       <div class="stats">
+           <div>
+               <i class="fas fa-code-branch fa-3x">
+                   <ul>
+                        <li class="stats-title">
+                            Project Completed
+                        </li>
+                        <li class="stats-number">
+                            6
+                        </li>
+                   </ul>
+               </i>
+            </div>
+           
+   </section>
+
+
 
 {% endblock %}
