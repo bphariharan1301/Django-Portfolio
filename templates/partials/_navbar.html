@@ -1,0 +1,43 @@
+
+{% load static %}
+
+<header id="header-inner"> 
+    <div class="container"> 
+       <!-- Navbar -->
+       <nav id="main-nav">
+           <a href="{% url 'home' %}">
+           <img src="{% static 'img/self-logo-t1.png' %}" alt="Logo" id="logo">
+           </a>
+           <ul>
+               <li>
+                {% if '' == request.path %}   
+                    <a href="{% url 'home' %}" class="current">Home</a>
+                {% else %}
+                    <a href="{% url 'home' %}">Home</a>
+                {% endif %}
+                </li>
+                <li>
+                    {% if 'about' in request.path %}   
+                        <a href="{% url 'about' %}" class="current">About</a>
+                    {% else %}
+                        <a href="{% url 'about' %}">About</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if 'work' in request.path %}   
+                        <a href="{% url 'work' %}" class="current">Work</a>
+                    {% else %}
+                        <a href="{% url 'work' %}">Work</a>
+                    {% endif %}
+                </li>
+                <li>
+                   {% if 'contact' in request.path %}   
+                        <a href="{% url 'contact' %}" class="current">Contact</a>
+                    {% else %}
+                        <a href="{% url 'contact' %}">Contact</a>
+                    {% endif %}
+                </li>
+           </ul>
+       </nav>
+   </div>
+</header>

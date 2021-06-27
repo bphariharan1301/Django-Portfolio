@@ -1,13 +1,150 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
+{% block title %}
+    About Me
+{% endblock %}
 
 {% block content %}
 
-<h1>
-    About Me
-</h1>
+{% include '../partials/_navbar.html' %}
+
+<section id="about-a" class="text-center py-3">
+    <div class="container">
+        <h2 class="section-title">
+            About Me
+        </h2>
+        <div class="bottom-line"></div>
+        <p class="lead">Let me tell you a little about myself and what I do...</p>
+        <div class="about-info">
+            <img src="{% static 'img/about.jpg' %}" alt="bio-image" class="bio-image">
+            <div class="bio bg-light">
+                <h4 class="font-high-weight bio-heading">Your Projects Is In Safe Hands</h4>
+                <p class="font-size-secondary">An oriented multitasking professional with good coding techniques pursuing bachelor of engineering degree in Computer Science and Engineering from Sathyabama Institute of Science and Technology [SIST] and have a comprehensive knowledge in development languages for instance C++, Python and web frameworks like Django and special talent of writing highly user-friendly programs.</p>
+            </div>
+
+            <!-- Awards -->
+            <!-- <div class="award-1">
+                <i class="fas fa-award fa-3x"></i>
+                <h3>
+                    Award One
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aspernatur!</p>
+            </div>
+            <div class="award-2">
+                <i class="fas fa-award fa-3x"></i>
+                <h3>
+                    Award Two
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aspernatur!</p>
+            </div>
+            <div class="award-3">
+                <i class="fas fa-award fa-3x"></i>
+                <h3>
+                    Award Three
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aspernatur!</p>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- Section B: Progress Bar -->
+
+<section id="about-b" class="bg-dark py-3">
+    <div class="container">
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+        <div class="bottom-line"></div>
+        
+        <h4>Python: </h4>
+        <div class="progress">
+            <div style="width: 100%;"></div>
+        </div>
+
+        <h4>Django: </h4>
+        <div class="progress">
+            <div style="width: 90%;" ></div>
+        </div>
+
+        <h4>C/C++: </h4>
+        <div class="progress">
+            <div style="width: 90%;" ></div>
+        </div>
+
+        <h4>JavaScript: </h4>
+        <div class="progress">
+            <div style="width: 50%;" ></div>
+        </div>
+
+        <h4>HTML & CSS: </h4>
+        <div class="progress">
+            <div style="width: 100%;" ></div>
+        </div>
+
+        <h4>Postgres: </h4>
+        <div class="progress">
+            <div style="width: 90%;" ></div>
+        </div>
+
+        <h4>MySQL: </h4>
+        <div class="progress">
+            <div style="width: 80%;" ></div>
+        </div>
+
+    </div>
+</section>
+   
+<!-- Section C: Logos -->
+
+<section id="about-c" class="py-4 bg-light">
+    <div class="container">
+        <div class="about-logos">
+            <img src="{% static 'img/about-logos/logo-django.png' %}" alt="django">
+            <img src="{% static 'img/about-logos/logo-python.png' %}" alt="python">
+            <img src="{% static 'img/about-logos/logo-C-C++.png' %}" alt="C-C++">
+            <img src="{% static 'img/about-logos/logo-js.png' %}" alt="js">
+            <img src="{% static 'img/about-logos/logo-html-css.png' %}" alt="html-css">
+            <img src="{% static 'img/about-logos/logo-Postgres.svg' %}" alt="Postgres">
+            <img src="{% static 'img/about-logos/logo-mysql.png' %}" alt="mysql">
+        </div>
+    </div>
+</section>
+
+<!-- Section D: Testimonials -->
+
+<!-- <section id="about-d" class="py-4">
+    <div class="container">
+        <h2 class="section-title">
+            Testimonials
+        </h2>
+        <div class="bottom-line"></div>
+        <p class="lead text-center">Take A Look At What My Clients Have Said...</p>
+        <div class="testimonails">
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vero aut hic non at, optio sequi veritatis nemo eius odit.</p>
+                <ul>
+                    <li><img src="{% static 'img/testimonials/person3.jpg' %}" alt="testimonial-1"></li>
+                    <li>
+                        John Doe, New York
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vero aut hic non at, optio sequi veritatis nemo eius odit.</p>
+                <ul>
+                    <li><img src="{% static 'img/testimonials/person2.jpg' %}" alt="testimonial-1"></li>
+                    <li>
+                        John Doe, New York
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section> -->
+
 
 {% endblock %}

@@ -1,13 +1,78 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
+{% block title %}
+    My Work
+{% endblock %}
 
 {% block content %}
 
-<h1>
-    My Work
-</h1>
+{% include '../partials/_navbar.html' %}
+
+<!-- Section A: Gallery -->
+
+<section id="work-a" class="text-center py-3">
+    <div class="container">
+        <h2 class="section-title">
+            My Work
+        </h2>
+        <div class="bottom-line"></div>
+        <p class="lead">Check out some of my projects</p>
+        <!-- All Items -->
+        <div class="items">
+            <!-- Single Item -->
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/items/item1.png' %}" alt="item-1">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Website
+                        </p>
+                        <h2 class="item-text-title">
+                            RealEstate
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/items/item2.png' %}" alt="item-2">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Website
+                        </p>
+                        <h2 class="item-text-title">
+                            Covid Beds
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/items/item3.png' %}" alt="item-3">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Website
+                        </p>
+                        <h2 class="item-text-title">
+                            Blog
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

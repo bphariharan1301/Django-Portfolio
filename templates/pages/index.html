@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block title %}
+    HARIHARAN B P
+{% endblock %}
+
+
 {% block content %}
 
    <header id="header-home"> 
@@ -20,7 +25,7 @@
            </nav>
            <div class="header-content">
                <h1>
-                   I Am Hariharan <span class="txt-type" data-wait="1500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
+                   I Am Hariharan B P <span class="txt-type" data-wait="2500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
                </h1>
                <p class="lead">Specialized Python(Django)/occasional use of C/C++/PHP. Have a look at my work</p>
                <a href="{% url 'work' %}" class="btn-light font-medium-weight">My Work</a>
@@ -86,9 +91,78 @@
                    </ul>
                </i>
             </div>
-           
    </section>
 
+   <!-- Section C: Process -->
 
+   <section id="home-c" class="text-center py-2">
+       <div class="container">
+           <h2 class="process-title">
+               My Creative Process
+           </h2>
+           <div class="bottom-line"></div>
+           <p class="lead">
+               All of my websites and projects are based off of a practicl formula to get the result that Iam looking for
+           </p>
+           <div class="process">
+               <div>
+                   <i class="fas fa-file-alt fa-4x process-icon my-2">
+                       <div class="process-step">
+                           1
+                       </div>
+                   </i>
+                   <h3>
+                       Discuss the Project
+                   </h3>
+                   <p>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                   </p>
+               </div>
+               
+               <div>
+                   <i class="fas fa-desktop fa-4x process-icon my-2">
+                       <div class="process-step">
+                           2
+                       </div>
+                   </i>
+                   <h3>
+                       Brainstroming & Concept
+                   </h3>
+                   <p>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                   </p>
+               </div>
+
+               <div>
+                   <i class="fas fa-object-ungroup fa-4x process-icon my-2">
+                       <div class="process-step">
+                           3
+                       </div>
+                   </i>
+                   <h3>
+                       Project Planning
+                   </h3>
+                   <p>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                   </p>
+               </div>
+
+               <div>
+                   <i class="fas fa-thumbs-up fa-4x process-icon my-2">
+                       <div class="process-step">
+                           4
+                       </div>
+                   </i>
+                   <h3>
+                       Interaction
+                   </h3>
+                   <p>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                   </p>
+               </div>
+
+           </div>
+       </div>
+   </section>
 
 {% endblock %}
