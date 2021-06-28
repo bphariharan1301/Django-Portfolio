@@ -1,3 +1,4 @@
+from pages.models import Work
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,6 +13,8 @@ def about(request):
 
 
 def work(request):
+    works = Work.objects.all()
+
     return render(request, 'pages/work.html')
 
 

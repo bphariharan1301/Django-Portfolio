@@ -75,10 +75,24 @@ WSGI_APPLICATION = 'Portfolio_Website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# SQLite
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Postgres
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Portfolio',
+        'USER': 'hbp',
+        'PASSWORD': 'AAd!tyAA$ravi',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
