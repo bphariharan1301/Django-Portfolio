@@ -2,6 +2,7 @@ from Portfolio_Website.settings import EMAIL_HOST_USER
 from pages.models import Contact, Technical_Skill, Work, User
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
+from django.contrib import messages
 
 
 # Create your views here.
