@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import dj_database_url
+from decouple import config
+import django_heroku
 from pathlib import Path
 import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Portfolio_Website.urls'
@@ -161,3 +166,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'meantechofficial2906@gmail.com'
 EMAIL_HOST_PASSWORD = 'qmlemwtpvhjjaefo'
 EMAIL_USE_TLS = True
+
+# Heroku Configuration
+
+
+# Static Files Whitnoise Storage
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
