@@ -22,54 +22,25 @@
         <!-- All Items -->
         <div class="items">
             <!-- Single Item -->
-            <div class="item">
-                <div class="item-image">
-                    <img src="{% static 'img/items/item1.png' %}" alt="item-1">
-                </div>
-                <div class="item-text">
-                    <div class="item-text-wrap">
-                        <p class="item-text-category">
-                            Website
-                        </p>
-                        <h2 class="item-text-title">
-                            RealEstate
-                        </h2>
+            {% for work in works %}
+                <div class="item">
+                    <div class="item-image">
+                        <img src="{{ work.photo_main.url }}" alt="item-1">
+                    </div>
+                    <div class="item-text">
+                        <div class="item-text-wrap">
+                            <p class="item-text-category">
+                              
+                                {{ work.category }}
+                            </p>
+                            <h2 class="item-text-title">
+                              
+                                {{ work.title }}
+                            </h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="item">
-                <div class="item-image">
-                    <img src="{% static 'img/items/item2.png' %}" alt="item-2">
-                </div>
-                <div class="item-text">
-                    <div class="item-text-wrap">
-                        <p class="item-text-category">
-                            Website
-                        </p>
-                        <h2 class="item-text-title">
-                            Covid Beds
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-image">
-                    <img src="{% static 'img/items/item3.png' %}" alt="item-3">
-                </div>
-                <div class="item-text">
-                    <div class="item-text-wrap">
-                        <p class="item-text-category">
-                            Website
-                        </p>
-                        <h2 class="item-text-title">
-                            Blog
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>

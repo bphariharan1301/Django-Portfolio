@@ -23,13 +23,14 @@
             Here is how you can reach me for projects 
         </p>
 
-        <form action="#">
+        <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
             <div class="text-fields">
-                <input type="text" name="name" class="text-input name-intput" placeholder="Name">
-                <input type="text" name="subject" class="text-input subject-intput" placeholder="Subject">
-                <input type="email" name="email" class="text-input email-intput" placeholder="Email Address">
-                <input type="text" name="phone" class="text-input phone-intput" placeholder="Phone Number">
-                <textarea type="text" name="message" class="text-input message-intput" placeholder="Enter Message"></textarea>
+                <input type="text" name="name" class="text-input name-intput" placeholder="Name" required>
+                <input type="text" name="subject" class="text-input subject-intput" placeholder="Subject" required>
+                <input type="email" name="email" class="text-input email-intput" placeholder="Email Address" required>
+                <input type="text" name="phone_number" class="text-input phone-intput" placeholder="Phone Number" required>
+                <textarea type="text" name="message" class="text-input message-intput" placeholder="Enter Message" required></textarea>
             </div>
             <button type="submit" class="btn-dark">
                 Submit
@@ -49,13 +50,11 @@
                 <h3>Email</h3>
                 <p>bphariharan1301@gmail.com</p>
             </div>
-
             <div>
                 <i class="fas fa-phone fa-2x"></i>
                 <h3>Phone</h3>
                 <p>+91 8668199082</p>
             </div>
-
             <div>
                 <i class="fas fa-address-card fa-2x"></i>
                 <h3>Address</h3>

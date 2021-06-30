@@ -21,10 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dh7^%&-8$bqipl_%j@^_(+nh2h#$$6xiv3qx6agirvcm*#jb*s'
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = os.environ.get('DEBUG')
+
 
 ALLOWED_HOSTS = []
 
@@ -148,3 +153,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email Configuration
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'meantechofficial2906@gmail.com'
+EMAIL_HOST_PASSWORD = 'qmlemwtpvhjjaefo'
+EMAIL_USE_TLS = True

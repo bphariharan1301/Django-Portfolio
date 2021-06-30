@@ -24,9 +24,11 @@
                </ul>
            </nav>
            <div class="header-content">
-               <h1>
-                   I Am Hariharan B P <span class="txt-type" data-wait="2500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
-               </h1>
+                {% for user in users %}
+                    <h1>
+                        I Am {{ user.name }} <span class="txt-type" data-wait="2500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
+                    </h1>
+                {% endfor %}
                <p class="lead">Specialized Python(Django)/occasional use of C/C++/PHP. Have a look at my work</p>
                <a href="{% url 'work' %}" class="btn-light font-medium-weight">My Work</a>
            </div>
@@ -50,33 +52,41 @@
                 <h3>
                     Concepting
                 </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+                <p>
+                    I learn new technologies ot framework by having a good understanding of the concept evolving behind it. 
+                </p>
             </div>
             <div>
                 <i class="fas fa-desktop fa-2x"></i>
                 <h3>
                     Web Developer
                 </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+                <p>
+                    My passion towards Web Development is huge. I spent a free time thinking of new features to implement to the projects I made.
+                </p>
             </div>
             <div>
                 <i class="fab fa-python fa-2x"></i>
                 <h3>
                     Python
                 </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+                <p>
+                    Python is the new found to add to my framework knowledge and learn every day so as to stay up-to-date with the technologies.
+                </p>
             </div>
             <div>
                 <i class="fas fa-thumbs-up fa-2x"></i>
                 <h3>
                     Interaction
                 </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur praesentium incidunt rerum eius aperiam, adipisci non sint quisquam quasi? Eius.</p>
+                <p>
+                    You can expect a good and well mannered group or 1-to-1 Interaction for the Project.
+                </p>
             </div>
         </div>
    </section>
 
-   <!-- Section B: Specialize -->
+   <!-- Section B: Stats -->
    <section id="home-b" class="text-center py-2">
        <div class="stats">
            <div>
@@ -115,11 +125,11 @@
                        Discuss the Project
                    </h3>
                    <p>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                       We can have a clear-cut requirements laid out for the project before we start building the project.
                    </p>
                </div>
                
-               <div>
+               <!-- <div>
                    <i class="fas fa-desktop fa-4x process-icon my-2">
                        <div class="process-step">
                            2
@@ -129,35 +139,35 @@
                        Brainstroming & Concept
                    </h3>
                    <p>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                       
                    </p>
-               </div>
+               </div> -->
 
                <div>
                    <i class="fas fa-object-ungroup fa-4x process-icon my-2">
                        <div class="process-step">
-                           3
+                           2
                        </div>
                    </i>
                    <h3>
                        Project Planning
                    </h3>
                    <p>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                       Project requirements will be analyzed completely and planning will be done based on that.
                    </p>
                </div>
 
                <div>
                    <i class="fas fa-thumbs-up fa-4x process-icon my-2">
                        <div class="process-step">
-                           4
+                           3
                        </div>
                    </i>
                    <h3>
                        Interaction
                    </h3>
                    <p>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit rem dolorum enim similique, fugiat obcaecati explicabo possimus sunt iure nesciunt!
+                       Weekly sync with the clients and project members to ensure we are on same track
                    </p>
                </div>
 

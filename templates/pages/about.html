@@ -58,41 +58,14 @@
             Technical Skills
         </h2>
         <div class="bottom-line"></div>
-        
-        <h4>Python: </h4>
-        <div class="progress">
-            <div style="width: 100%;"></div>
-        </div>
 
-        <h4>Django: </h4>
-        <div class="progress">
-            <div style="width: 90%;" ></div>
-        </div>
-
-        <h4>C/C++: </h4>
-        <div class="progress">
-            <div style="width: 90%;" ></div>
-        </div>
-
-        <h4>JavaScript: </h4>
-        <div class="progress">
-            <div style="width: 50%;" ></div>
-        </div>
-
-        <h4>HTML & CSS: </h4>
-        <div class="progress">
-            <div style="width: 100%;" ></div>
-        </div>
-
-        <h4>Postgres: </h4>
-        <div class="progress">
-            <div style="width: 90%;" ></div>
-        </div>
-
-        <h4>MySQL: </h4>
-        <div class="progress">
-            <div style="width: 80%;" ></div>
-        </div>
+        {% for skill in skills %}
+            <h4>{{ skill.skill_name }} : </h4>
+            <div class="progress">
+                <!-- It will show red underline just ignore it!! Don't mind it -->
+                <div style="width: {{ skill.experience_level }}%;" ></div> 
+            </div>
+        {% endfor %}
 
     </div>
 </section>
@@ -122,9 +95,9 @@
         </h2>
         <div class="bottom-line"></div>
         <p class="lead text-center">Take A Look At What My Clients Have Said...</p>
-        <div class="testimonails">
+        <div class="testimonials">
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vero aut hic non at, optio sequi veritatis nemo eius odit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, consequatur?</p>
                 <ul>
                     <li><img src="{% static 'img/testimonials/person3.jpg' %}" alt="testimonial-1"></li>
                     <li>
@@ -134,7 +107,7 @@
             </div>
 
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vero aut hic non at, optio sequi veritatis nemo eius odit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, cum!</p>
                 <ul>
                     <li><img src="{% static 'img/testimonials/person2.jpg' %}" alt="testimonial-1"></li>
                     <li>
@@ -144,7 +117,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>  -->
 
 
 {% endblock %}
