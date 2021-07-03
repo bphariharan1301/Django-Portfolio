@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+<link rel="stylesheet" href="/static/css/main.css">
+
+{% block content %}
+
+    {% include 'partials/_navbar.html' %}
+
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 1.2rem;">
+            CONTACT SUCCESS
+        </h2>
+        
+        <div class="bottom-line"></div>
+
+        <p class="lead text-center">
+            Your Email has been sent to us. We will Revert back to you soon..!
+        </p>
+
+        <p class="lead text-center my-1">
+            Thank You.
+        </p>
+        <a href="{% url 'home' %}" class="btn btn-dark my-2">
+            Welcome
+        </a>    
+    </div>
+
+{% endblock %}
+
+

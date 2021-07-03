@@ -1,76 +1,77 @@
+from pages.forms import ContactForm
+from django.conf import settings
 from Portfolio_Website.settings import EMAIL_HOST_USER
-from pages.models import Contact, Technical_Skill, Work, User
+from pages.models import *
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
-from django.contrib import messages
+from django import forms
+from verify_email.email_handler import send_verification_email
 
 
 # Create your views here.
 
-users = User.objects.all()
-
 
 def home(request):
-    context = {
-        'users': users,
-    }
-    return render(request, 'pages/index.html', context)
+
+    return render(request, 'pages/index.html')
 
 
 def about(request):
     skills = Technical_Skill.objects.all()
 
     context = {
-        'users': users,
         'skills': skills,
     }
     return render(request, 'pages/about.html', context)
 
 
 def work(request):
-    works = Work.objects.all()
+    # works = Work.objects.all()
 
-    context = {
-        'works': works,
-    }
+    # context = {
+    #     'works': works,
+    # }
 
-    return render(request, 'pages/work.html', context)
+    return render(request, 'pages/work.html')
 
 
 def contact(request):
-
     if request.method == 'POST':
-        name = request.POST['name']
-        subject = request.POST['subject']
-        email = request.POST['email']
-        phone_number = request.POST['phone_number']
-        message = request.POST['message']
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # form.save()
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            phone_number = form.cleaned_data['phone_number']
+            message = form.cleaned_data['message']
 
-        contact = Contact(name=name, email=email, subject=subject,
-                          phone_number=phone_number, message=message)
+            # Contacted User
+            send_mail(
+                'THANK YOU',
+                'Hey, Your Email has reached us. \n\nWe will get back to you soon',
+                EMAIL_HOST_USER,
+                [email],
+                fail_silently=False,
+            )
 
-        contact.save()
-        # To the Contacted Person
-        send_mail(
-            'THANK YOU FOR GETTING IN TOUCH',  # subject,
-            'Hey, ' + name + '\n\nHope you are doing good and having a fantastic day. Thank you for contacting me.' +
-            '\n\n I will get back to you soon',  # message/body,
-            EMAIL_HOST_USER,  # from,
-            # To/Recieptents which is tuple ['email-1', 'email-2', ....., 'email-n'],
-            [email],
-            fail_silently=False,
-        )
+            if (send_mail):
+                send_mail(
+                    subject,
+                    message + '\n\nSent by' + '\n\nName: ' + name +
+                    '\n\nEmail-id: ' + email + '\n\nPhone Number: ' + phone_number,
+                    EMAIL_HOST_USER,
+                    ['bphariharan1301@gmail.com'],
+                    fail_silently=False
+                )
+                # return render(request, 'contact/success.html')
+                form.save()
+            return render(request, 'partials/_success.html')
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'pages/contact.html', context)
 
-        # To yourself as a infomation
-        send_mail(
-            'NEW CONTACT',
-            'You have been contacted by ' + name + ' for "' + subject +
-            '". Details give below,' + '\n\n' + message + '\n\nHave a nice day',
-            EMAIL_HOST_USER,
-            ['bphariharan1301@gmail.com'],
-            fail_silently=False,
-        )
 
-        return redirect('home')
-    else:
-        return render(request, 'pages/contact.html')
+def success(request):
+
+    return render(request, 'success.html')

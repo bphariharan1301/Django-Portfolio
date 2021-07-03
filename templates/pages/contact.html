@@ -3,82 +3,61 @@
 {% load static %}
 
 {% block title %}
-    Contact Me
+  Contact ME
 {% endblock %}
 
 {% block content %}
 
-{% include '../partials/_navbar.html' %}
-
+{% include 'partials/_navbar.html' %}
 
 <!-- section A: Contact Form -->
 
 <section id="contact-a" class="text-center py-3">
-    <div class="container">
-        <h2 class="section-title">
-            Contact Me
-        </h2>
-        <div class="bottom-line"></div>
-        <p class="lead">
-            Here is how you can reach me for projects 
-        </p>
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="bottom-line"></div>
+    <p class="lead">Here is how you can reach me</p>
+    <form action="{% url 'contact' %}" method="POST" >
+      {% csrf_token %}
+      <div class="text-fields">
+        <!-- <input
+          type="text"
+          class="text-input name-input"
+          placeholder="Name"
+          name="name"
+        />
+        <input
+          type="text"
+          class="text-input subject-input"
+          placeholder="Subject"
+          name="subject"
+        />
+        <input
+          type="email"
+          class="text-input email-input"
+          placeholder="Email Address"
+          name="email"
+        />
+        <input
+          type="text"
+          class="text-input phone-input"
+          placeholder="Phone Number"
+          name="phone_number"
+        />
+        <textarea
+          class="text-input message-input"
+          placeholder="Enter Message"
+          name="message"
+        ></textarea> -->
+        {{ form }}
 
-        <form action="{% url 'contact' %}" method="POST">
-            {% csrf_token %}
-            <div class="text-fields">
-                <input type="text" name="name" class="text-input name-intput" placeholder="Name" required>
-                <input type="text" name="subject" class="text-input subject-intput" placeholder="Subject" required>
-                <input type="email" name="email" class="text-input email-intput" placeholder="Email Address" required>
-                <input type="text" name="phone_number" class="text-input phone-intput" placeholder="Phone Number" required>
-                <textarea type="text" name="message" class="text-input message-intput" placeholder="Enter Message" required></textarea>
-            </div>
-            <button type="submit" class="btn-dark">
-                Submit
-            </button>
-        </form>
 
-    </div>
-</section>
-
-<!-- Section B: contact Info -->
-
-<section id="contact-b" class="py-3 bg-dark">
-    <div class="container">
-        <div class="contact-info">
-            <div>
-                <i class="fas fa-envelope fa-2x"></i>
-                <h3>Email</h3>
-                <p>bphariharan1301@gmail.com</p>
-            </div>
-            <div>
-                <i class="fas fa-phone fa-2x"></i>
-                <h3>Phone</h3>
-                <p>+91 8668199082</p>
-            </div>
-            <div>
-                <i class="fas fa-address-card fa-2x"></i>
-                <h3>Address</h3>
-                <p>
-                    Plot No. 98, Door No,12 Shanthi Vinayagar Koil Street, Shanthi Nikethan Colony, Tambaram, Tamil Nadu, India
-                </p>
-                <p>
-                    ZipCode/Pincode : 600126
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section C:tagline -->
-
-<section id="contact-c" class="bg-main py-4">
-    <div class="container">
-        <h1>
-            Let's Start  Your Next Project
-        </h1>
-
-    </div>
+      </div>
+      <button type="submit" class="btn-dark">Submit</button>
+    </form>
+  </div>
 </section>
 
 
 {% endblock %}
+

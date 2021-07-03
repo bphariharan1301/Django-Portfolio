@@ -31,7 +31,17 @@
                     {% endif %}
                 </li>
                 <li>
-                   {% if 'contact' in request.path %}   
+                    <!-- {% if '#' in request.path %}   
+                        <a href="" class="current">Contact</a>
+                    {% elif 'contact' in request.path %}
+                        <a href="" class="current">Contact</a>
+                    {% elif 'success' in request.path %}
+                        <a href="" class="current">Contact</a>
+                    {% else %}
+                        <a href="">Contact</a>
+                    {% endif %} -->
+
+                    {% if 'contact' in request.path %}
                         <a href="{% url 'contact' %}" class="current">Contact</a>
                     {% else %}
                         <a href="{% url 'contact' %}">Contact</a>

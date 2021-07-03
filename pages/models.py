@@ -3,25 +3,26 @@ from django.db import models
 # Create your models here.
 
 
-class Work(models.Model):
+# Create it after installing cloudinary in heroku add-on
+'''class Work(models.Model):
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d')
     category = models.CharField(max_length=100, blank=True)
     title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
+'''
 
+# class User(models.Model):
+#     name = models.CharField(max_length=30)
+#     user_image = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+#     about_me = models.TextField()
 
-class User(models.Model):
-    name = models.CharField(max_length=30)
-    user_image = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    about_me = models.TextField()
+#     def __str__(self):
+#         return self.name
 
-    def __str__(self):
-        return self.name
-
-
-class Testimonail(models.Model):
+# Create after Installing Cloudinary in heroku add-on
+'''class Testimonail(models.Model):
     testimonial_name = models.CharField(max_length=30)
     testimonial_location = models.CharField(max_length=50)
     testimonial_image = models.ImageField(
@@ -29,6 +30,7 @@ class Testimonail(models.Model):
 
     def __str__(self):
         return self.testimonial_name
+'''
 
 
 class Technical_Skill(models.Model):

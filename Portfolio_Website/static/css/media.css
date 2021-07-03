@@ -15,12 +15,15 @@
   font-weight: bolder;
   font-size: larger; }
 
-.btn-main, .btn-light, .btn-dark {
+.btn, .btn-main, .btn-light, .btn-dark {
   display: inline-block;
   padding: 0.8rem 2rem;
   transition: all 0.5s;
   border: none;
   cursor: pointer; }
+
+.btn {
+  text-align: center; }
 
 .btn-main {
   color: #333;
@@ -32,6 +35,11 @@
 
 .btn-dark {
   color: #f4f4f4;
+  background-color: #333; }
+
+.btn-small {
+  color: #f4f4f4;
+  width: 30%;
   background-color: #333; }
 
 button[class^="btn-"]:hover,
@@ -144,9 +152,15 @@ input[class^="btn-"]:hover {
   #about-c {
     display: none; }
   #contact-a .text-fields {
-    grid-template-areas: "name" "subject" "email" "phone" "message"; }
+    grid-template-areas: "name" "subject" "phone" "message"; }
     #contact-a .text-fields .message-intput {
       height: 50px; }
+  #contact-a .form-field {
+    display: grid;
+    grid-template-areas: "email"; }
+    #contact-a .form-field .verify-email-input {
+      grid-area: email;
+      width: 105%; }
   #contact-b .contact-info div {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
