@@ -189,7 +189,7 @@ img {
 
 #home-b .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); }
+  grid-template-columns: repeat(1, 1fr); }
   #home-b .stats li {
     line-height: 2; }
     #home-b .stats li.stats-title {

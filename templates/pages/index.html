@@ -26,11 +26,9 @@
            </nav>
 
            <div class="header-content">
-                {% for user in users %}
                     <h1>
                         I Am HARIHARAN B P <span class="txt-type" data-wait="2500" data-words='["Full Stack Web Developer", "Freelancer"]' ></span>
                     </h1>
-                {% endfor %}
                <p class="lead">Specialized Python(Django)/occasional use of C/C++/PHP. Have a look at my work</p>
                <a href="{% url 'work' %}" class="btn-light font-medium-weight">My Work</a>
            </div>
@@ -90,7 +88,7 @@
 
    <!-- Section B: Stats -->
    <section id="home-b" class="text-center py-2">
-       <div class="stats">
+       <div class="stats" style="text-align: center;">
            <div>
                <i class="fas fa-code-branch fa-3x">
                    <ul>
