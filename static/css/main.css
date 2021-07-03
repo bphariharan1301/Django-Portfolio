@@ -19,6 +19,7 @@
   font-size: larger;
 }
 
+.btn,
 .btn-main,
 .btn-light,
 .btn-dark {
@@ -27,6 +28,10 @@
   transition: all 0.5s;
   border: none;
   cursor: pointer;
+}
+
+.btn {
+  text-align: center;
 }
 
 .btn-main {
@@ -41,6 +46,12 @@
 
 .btn-dark {
   color: #f4f4f4;
+  background-color: #333;
+}
+
+.btn-small {
+  color: #f4f4f4;
+  width: 30%;
   background-color: #333;
 }
 
@@ -137,18 +148,6 @@ input[class^="btn-"]:hover {
   padding: 0;
 }
 
-body::-webkit-scrollbar {
-  width: 0 !important;
-}
-
-body {
-  overflow: -moz-scrollbars-none;
-}
-
-body {
-  -ms-overflow-style: none;
-}
-
 body {
   font-family: "Dosis", sans-serif;
   line-height: 1.6;
@@ -179,7 +178,6 @@ img {
   height: 70px;
   color: #fff;
   text-transform: uppercase;
-  position: relative;
 }
 
 #main-nav {
@@ -210,9 +208,16 @@ img {
 
 #header-home {
   background: url("../img/showcase-self-2.jpg") no-repeat center right/cover;
-  background-color: #333;
   height: 100vh;
   color: #fff;
+}
+#header-home .header-content {
+  text-align: center;
+  padding-top: 20%;
+}
+#header-home .header-content h1 {
+  font-size: 4rem;
+  line-height: 1.2;
 }
 
 #header-inner {
@@ -221,28 +226,15 @@ img {
   border-bottom: 3px solid #ffbc00;
 }
 
-.header-content {
-  text-align: center;
-  padding-top: 22%;
-}
-.header-content h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-}
-
 #home-a .specials {
   margin-top: 3rem;
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
 }
 #home-a .specials .fas {
   color: #ffbc00;
-  padding-bottom: 0.2rem;
-}
-#home-a .specials .fab {
-  color: #ffbc00;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.4rem;
 }
 
 #home-b .stats {
@@ -263,16 +255,14 @@ img {
   padding: 3rem 0;
 }
 #home-b .stats div:nth-child(odd) {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
 }
 #home-b .stats div:nth-child(even) {
-  background-color: #ccc;
+  background: #ccc;
 }
 
 #home-c .process {
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr); 
-   add this line when u add the commented line in the index.html file under section 3 */
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
   text-align: center;
@@ -281,8 +271,9 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 20px;
+  font-size: 28px;
   background: #ffbc00;
+  color: #fff;
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -310,6 +301,7 @@ img {
 }
 #home-c .process-icon:hover .process-step {
   background: #333;
+  color: #fff;
 }
 
 #about-a .about-info {
@@ -318,9 +310,6 @@ img {
     "bioimage bio bio"
     "aw1 aw2 aw3";
   grid-gap: 1.2rem;
-}
-#about-a .about-info .bio-heading {
-  line-height: 5rem;
 }
 
 #about-a .bio-image {
@@ -352,19 +341,16 @@ img {
   margin: 1rem;
 }
 
-#about-b {
-  padding-bottom: 2rem;
-}
 #about-b .progress {
   overflow: hidden;
   height: 20px;
   background: #ccc;
   border-radius: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 #about-b .progress div {
   height: 100%;
-  color: #f4f4f4;
+  color: #fff;
   text-align: center;
   background: #ffbc00;
 }
@@ -375,13 +361,12 @@ img {
   grid-gap: 2rem;
 }
 #about-c .about-logos img {
-  padding-bottom: 3rem;
   width: 70%;
 }
 
 #about-d .testimonials {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
 }
 #about-d .testimonials ul {
@@ -411,19 +396,22 @@ img {
   grid-gap: 1.2rem;
   margin-bottom: 1.2rem;
 }
-#contact-a .text-fields .name-intput {
+#contact-a .text-fields label {
+  display: none;
+}
+#contact-a .text-fields .name-input {
   grid-area: name;
 }
-#contact-a .text-fields .subject-intput {
+#contact-a .text-fields .subject-input {
   grid-area: subject;
 }
-#contact-a .text-fields .email-intput {
+#contact-a .text-fields .email-input {
   grid-area: email;
 }
-#contact-a .text-fields .phone-intput {
+#contact-a .text-fields .phone-input {
   grid-area: phone;
 }
-#contact-a .text-fields .message-intput {
+#contact-a .text-fields .message-input {
   grid-area: message;
   height: 100px;
 }
@@ -458,8 +446,8 @@ img {
   align-items: center;
 }
 #main-footer .footer-content .social .fab {
-  padding-right: 1rem;
-  border: 2px white solid;
+  margin-right: 1rem;
+  border: 2px #fff solid;
   border-radius: 50%;
   height: 20px;
   width: 20px;
@@ -469,7 +457,4 @@ img {
 }
 #main-footer .footer-content .social .fab:hover {
   background: #ffbc00;
-}
-#main-footer .footer-content .social a {
-  color: #fff;
 }
