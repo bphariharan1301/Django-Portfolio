@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'Portfolio_Website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Portfolio',
-        'USER': 'hbp',
-        'PASSWORD': 'AAd!tyAA$ravi',
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -160,10 +160,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'meantechofficial2906@gmail.com'
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-
-# EMAIL_HOST_PASSWORD = 'qmlemwtpvhjjaefo'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
