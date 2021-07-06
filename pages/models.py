@@ -4,14 +4,14 @@ from django.db import models
 
 
 # Create it after installing cloudinary in heroku add-on
-'''class Work(models.Model):
+class Work(models.Model):
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d')
     category = models.CharField(max_length=100, blank=True)
     title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
-'''
+
 
 # class User(models.Model):
 #     name = models.CharField(max_length=30)
