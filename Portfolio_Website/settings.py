@@ -35,14 +35,14 @@ if os.path.isfile(dotenv_file):
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-dh7^%&-8$bqipl_%j@^_(+nh2h#$$6xiv3qx6agirvcm*#jb*s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = os.environ.get('DEBUG')
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
+
 
 
 ALLOWED_HOSTS = ['*']
@@ -98,22 +98,17 @@ WSGI_APPLICATION = 'Portfolio_Website.wsgi.application'
 
 # Postgres
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'Portfolio',
-#         'USER': 'hbp',
-#         'PASSWORD': 'AAd!tyAA$ravi',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Portfolio',
+        'USER': 'hbp',
+        'PASSWORD': 'AAd!tyAA$ravi',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
-# from dj_database_url import config
-
-
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # db_from_env = dj_database_url.config(conn_max_age=600)
@@ -188,5 +183,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
 
-options = DATABASES['default'].get('OPTIONS', {})
-options.pop('sslmode', None)
+
