@@ -6,6 +6,6 @@ from .models import *
 
 admin.site.register(Work)
 # admin.site.register(User)
-# admin.site.register(Testimonail)
+admin.site.register(Testimonail)
 admin.site.register(Technical_Skill)
 admin.site.register(Contact)

@@ -22,7 +22,7 @@ class Work(models.Model):
 #         return self.name
 
 # Create after Installing Cloudinary in heroku add-on
-'''class Testimonail(models.Model):
+class Testimonail(models.Model):
     testimonial_name = models.CharField(max_length=30)
     testimonial_location = models.CharField(max_length=50)
     testimonial_image = models.ImageField(
@@ -30,7 +30,7 @@ class Work(models.Model):
 
     def __str__(self):
         return self.testimonial_name
-'''
+
 
 
 class Technical_Skill(models.Model):
