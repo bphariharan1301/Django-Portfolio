@@ -247,6 +247,18 @@ img {
   grid-template-areas: "bioimage bio bio" "aw1 aw2 aw3";
   grid-gap: 1.2rem; }
 
+#about-a .resume-btn {
+  text-align: center;
+  justify-items: center;
+  width: 50%; }
+
+#about-a .resume-btn:hover {
+  background-color: #ffbc00;
+  color: #333; }
+
+#about-a #resume {
+  padding-top: 10rem; }
+
 #about-a .bio-image {
   grid-area: bioimage; }
 

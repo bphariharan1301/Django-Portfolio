@@ -216,6 +216,21 @@ img {
       grid-gap: 1.2rem;
     }
 
+    .resume-btn {
+      text-align: center;
+      justify-items: center;
+      width: 50%;
+    }
+
+    .resume-btn:hover {
+      background-color: $main-color;
+      color: #333;
+    }
+
+    #resume {
+      padding-top: 10rem;
+    }
+
     // Grid Area
     .bio-image {
       grid-area: bioimage;
