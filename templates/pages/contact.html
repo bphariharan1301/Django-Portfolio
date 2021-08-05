@@ -20,7 +20,7 @@
     <form action="{% url 'contact' %}" method="POST" >
       {% csrf_token %}
       <div class="text-fields">
-        <!-- <input
+        <input
           type="text"
           class="text-input name-input"
           placeholder="Name"
@@ -48,13 +48,35 @@
           class="text-input message-input"
           placeholder="Enter Message"
           name="message"
-        ></textarea> -->
-        {{ form }}
+        ></textarea> 
+<!-- form -->
 
 
       </div>
       <button type="submit" class="btn-dark">Submit</button>
     </form>
+  </div>
+</section>
+
+<section id="contact-b" class="py-3 bg-dark main-line">
+  <div class="container">
+    <div class="contact-info">
+      <div>
+        <i class="fas fa-envelope fa-2x"></i>
+        <h3>Email</h3>
+        <p>john@something.com</p>
+      </div>
+      <div>
+        <i class="fas fa-phone fa-2x"></i>
+        <h3>Phone</h3>
+        <p>(555) 555-5555</p>
+      </div>
+      <div>
+        <i class="fas fa-address-card fa-2x"></i>
+        <h3>Address</h3>
+        <p>50 Main st, Boston MA</p>
+      </div>
+    </div>
   </div>
 </section>
 
