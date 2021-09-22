@@ -26,50 +26,56 @@ def about(request):
 
 
 def work(request):
-    # works = Work.objects.all()
+    works = Work.objects.all()
 
-    # context = {
-    #     'works': works,
-    # }
+    context = {
+        'works': works,
+    }
 
-    return render(request, 'pages/work.html')
+    return render(request, 'pages/work.html', context)
 
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # form.save()
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            phone_number = form.cleaned_data['phone_number']
-            message = form.cleaned_data['message']
 
-            # Contacted User
-            send_mail(
-                'THANK YOU',
-                'Hey, Your Email has reached us. \n\nWe will get back to you soon',
-                EMAIL_HOST_USER,
-                [email],
-                fail_silently=False,
-            )
+        # form = ContactForm(request.POST)
+        # if form.is_valid():
+        # # form.save()
+        # name = form.cleaned_data['name']
+        # email = form.cleaned_data['email']
+        # subject = form.cleaned_data['subject']
+        # phone_number = form.cleaned_data['phone_number']
+        # message = form.cleaned_data['message']
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        phone_number = request.POST['phone_number']
+        message = request.POST['message']
 
-            if (send_mail):
-                send_mail(
-                    subject,
-                    message + '\n\nSent by' + '\n\nName: ' + name +
-                    '\n\nEmail-id: ' + email + '\n\nPhone Number: ' + phone_number,
-                    EMAIL_HOST_USER,
-                    ['bphariharan1301@gmail.com'],
-                    fail_silently=False
-                )
-                # return render(request, 'contact/success.html')
-                form.save()
-            return render(request, 'partials/_success.html')
-    form = ContactForm()
-    context = {'form': form}
-    return render(request, 'pages/contact.html', context)
+        # Contacted User
+        send_mail(
+            'THANK YOU',
+            'Hey, Your Email has reached us. \n\nWe will get back to you soon',
+            EMAIL_HOST_USER,
+            [email],
+            fail_silently=False,
+        )
+
+        # if (send_mail):
+        send_mail(
+            subject,
+            message + '\n\nSent by' + '\n\nName: ' + name +
+            '\n\nEmail-id: ' + email + '\n\nPhone Number: ' + phone_number,
+            EMAIL_HOST_USER,
+            ['bphariharan1301@gmail.com'],
+            fail_silently=False
+        )
+        # return render(request, 'contact/success.html')
+        # form.save()
+        # return render(request, 'partials/_success.html')
+        # form = ContactForm()
+        # context = {'form': form}
+    return render(request, 'pages/contact.html')
 
 
 def success(request):

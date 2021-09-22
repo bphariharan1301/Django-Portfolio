@@ -9,16 +9,18 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from pathlib import Path
 import dj_database_url
 from decouple import config
 import django_heroku
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,13 +35,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = os.environ.get('DEBUG')
-
-
-
 
 
 ALLOWED_HOSTS = ['*']
@@ -55,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'cloudinary',
     'verify_email.apps.VerifyEmailConfig',
 ]
 
@@ -174,6 +173,17 @@ EMAIL_USE_TLS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
+# Cloudinary Config
+
+cloudinary.config(
+    cloud_name="dloewksku",
+    api_key="785188229373933",
+    api_secret="ka4aB0hTXtNg3mD-Y5ydxLzbaSs",
+    upload_prefix="http://api.cloudinary.com"
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 django_heroku.settings(locals())
-
-
