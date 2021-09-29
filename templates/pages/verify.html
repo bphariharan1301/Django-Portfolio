@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'partials/_navbar.html' %}
+
+<section id="contact-a" class="text-center py-3">
+  <div class="container">
+    <h2 class="section-title">
+      Verify Email
+    </h2>
+    <div class="bottom-line"></div>
+    <p class="lead">
+      Enter the OTP sent to your email address
+    </p>
+    <form action="{% url 'verify' %}" method="POST" style="display: inline-block;">
+      {% csrf_token %}
+      <div class="text-fields" style="text-align: center;">
+        <input
+        type="text"
+        class="text-input verify-input"
+        placeholder="Enter OTP"
+        name="otp"
+      />
+    </div>
+    <button type="submit" class="btn-dark">Submit</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

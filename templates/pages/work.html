@@ -35,6 +35,15 @@
                             <h2 class="item-text-title">
                                 {{ work.title }}
                             </h2>
+                            {% if work.live_at %}
+                                <p class="item-text-live">
+                                    <a href="{{ work.live_at }}" target="__blank">Live at</a> 
+                                </p>
+                            {% else %}
+                                <p class="item-text-live item-not-live">
+                                    Not Live
+                                </p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

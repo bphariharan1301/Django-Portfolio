@@ -10,6 +10,7 @@ class Work(models.Model):
     photo_main = CloudinaryField('work')
     category = models.CharField(max_length=100, blank=True)
     title = models.CharField(max_length=100)
+    live_at = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.title

@@ -340,9 +340,15 @@ img {
     height: 100px; }
   #contact-a .text-fields .text-input {
     padding: 0.5rem 1rem; }
+  #contact-a .text-fields .verify-input {
+    width: 500px;
+    text-align: center; }
 
 #contact-a button[type="submit"] {
   width: 50%; }
+
+#contact-b .main-line {
+  border-bottom: 5px solid #ffbc00; }
 
 #contact-b .contact-info {
   display: grid;
