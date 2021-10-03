@@ -94,7 +94,7 @@ def verify(request):
     # random_otp = 0
     if request.method == 'POST':
         otp = request.POST['otp']
-        print(contact.user_otp)
+        # print(contact.user_otp)
         print(otp)
         print(type(otp))
         user_otp = int(otp)
@@ -117,5 +117,7 @@ def verify(request):
                 ['bphariharan1301@gmail.com'],
                 fail_silently=False
             )
+
+            return redirect('home')
 
     return render(request, 'pages/verify.html')
