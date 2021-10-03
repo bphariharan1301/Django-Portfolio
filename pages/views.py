@@ -73,14 +73,14 @@ def contact(request):
         random_otp = int(random)
         contact.user_otp = random_otp
         print(contact.user_otp)
-        # send_mail(
-        #     'RANDOM OTP',
-        #     'The OTP is: '+random,
-        #     EMAIL_HOST_USER,
-        #     [contact.user_email, ],
-        #     # ['t@gmail.com'],
-        #     fail_silently=False,
-        # )
+        send_mail(
+            'RANDOM OTP',
+            'The OTP is: '+random,
+            EMAIL_HOST_USER,
+            [contact.user_email, ],
+            # ['t@gmail.com'],
+            fail_silently=False,
+        )
         return redirect('verify')
     return render(request, 'pages/contact.html')
 
