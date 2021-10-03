@@ -43,7 +43,12 @@ def contact(request):
         subject = request.POST['subject']
         phone_number = request.POST['phone_number']
         message = request.POST['message']
+
+        contact.user_name = name
         contact.user_email = email
+        contact.user_subject = subject
+        contact.user_phone_number = phone_number
+        contact.user_message = message
 
         # Contacted User
         '''send_mail(
@@ -63,6 +68,20 @@ def contact(request):
             ['bphariharan1301@gmail.com'],
             fail_silently=False
         )'''
+        chars = string.digits
+        random = ''.join(choice(chars) for i in range(4))
+        random_otp = int(random)
+        contact.user_otp = random_otp
+        print(contact.user_otp)
+        # send_mail(
+        #     'RANDOM OTP',
+        #     'The OTP is: '+random,
+        #     EMAIL_HOST_USER,
+        #     [contact.user_email, ],
+        #     # ['t@gmail.com'],
+        #     fail_silently=False,
+        # )
+        return redirect('verify')
     return render(request, 'pages/contact.html')
 
 
@@ -72,20 +91,31 @@ def success(request):
 
 
 def verify(request):
-
+    # random_otp = 0
     if request.method == 'POST':
         otp = request.POST['otp']
-    else:
-        chars = string.digits
-        random = ''.join(choice(chars) for i in range(4))
-        random_otp = int(random)
-        send_mail(
-            'RANDOM OTP',
-            'The OTP is: '+random,
-            EMAIL_HOST_USER,
-            # [contact.user_email, ],
-            ['t@gmail.com'],
-            fail_silently=False,
-        )
+        print(contact.user_otp)
+        print(otp)
+        print(type(otp))
+        user_otp = int(otp)
+        if contact.user_otp == user_otp:
+            print('OTP VERIFIED')
+            send_mail(
+                'THANK YOU',
+                'Hey, Your Email has reached us. \n\nWe will get back to you soon',
+                EMAIL_HOST_USER,
+                [contact.user_email],
+                fail_silently=False,
+            )
+
+            send_mail(
+                contact.user_subject,
+                contact.user_message + '\n\nSent by' + '\n\nName: ' + contact.user_name +
+                '\n\nEmail-id: ' + contact.user_email +
+                '\n\nPhone Number: ' + contact.user_phone_number,
+                EMAIL_HOST_USER,
+                ['bphariharan1301@gmail.com'],
+                fail_silently=False
+            )
 
     return render(request, 'pages/verify.html')
