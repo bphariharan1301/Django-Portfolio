@@ -2,10 +2,9 @@ from pages.forms import ContactForm
 from django.conf import settings
 from Portfolio_Website.settings import EMAIL_HOST_USER
 from pages.models import *
-from django.shortcuts import redirect, render, resolve_url
+from django.shortcuts import redirect, render
 from django.core.mail import send_mail
-from django import forms
-from verify_email.email_handler import send_verification_email
+
 import string
 from random import choice
 
@@ -117,6 +116,10 @@ def verify(request):
                 ['bphariharan1301@gmail.com'],
                 fail_silently=False
             )
+
+            user_contact = Contact(name=contact.user_name, email=contact.user_email, subject=contact.user_subject,
+                                   phone_number=contact.user_phone_number, message=contact.user_message)
+            user_contact.save()
 
             return redirect('home')
 
