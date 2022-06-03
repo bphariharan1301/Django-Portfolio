@@ -147,7 +147,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
-# Tells where the static files are locating before performing collectstaic
+# Tells where the static files are located before performing collectstaic
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Portfolio_Website/static')
 ]

@@ -49,24 +49,6 @@ def contact(request):
         contact.user_phone_number = phone_number
         contact.user_message = message
 
-        # Contacted User
-        '''send_mail(
-            'THANK YOU',
-            'Hey, Your Email has reached us. \n\nWe will get back to you soon',
-            EMAIL_HOST_USER,
-            [email],
-            fail_silently=False,
-        )'''
-
-        # if (send_mail):
-        '''send_mail(
-            subject,
-            message + '\n\nSent by' + '\n\nName: ' + name +
-            '\n\nEmail-id: ' + email + '\n\nPhone Number: ' + phone_number,
-            EMAIL_HOST_USER,
-            ['bphariharan1301@gmail.com'],
-            fail_silently=False
-        )'''
         chars = string.digits
         random = ''.join(choice(chars) for i in range(4))
         random_otp = int(random)

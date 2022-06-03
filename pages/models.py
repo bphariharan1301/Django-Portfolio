@@ -15,15 +15,6 @@ class Work(models.Model):
     def __str__(self):
         return self.title
 
-
-# class User(models.Model):
-#     name = models.CharField(max_length=30)
-#     user_image = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-#     about_me = models.TextField()
-
-#     def __str__(self):
-#         return self.name
-
 # Create after Installing Cloudinary in heroku add-on
 class Testimonail(models.Model):
     testimonial_name = models.CharField(max_length=30)
